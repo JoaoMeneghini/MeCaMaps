@@ -2,11 +2,25 @@ import React from 'react';
 import ReactDOM from 'react-dom';
 import './index.css';
 import App from './App';
+import { Caminhos } from './Caminhos';
+import { Planta } from './plantas';
 import reportWebVitals from './reportWebVitals';
+
+const Teste = () => {
+  return (
+    <main>
+      <div>
+        <Caminhos />
+        <Planta />
+      </div>
+     </main>             
+  );
+};
+
 
 ReactDOM.render(
   <React.StrictMode>
-    <App />
+    <Teste />
   </React.StrictMode>,
   document.getElementById('root')
 );

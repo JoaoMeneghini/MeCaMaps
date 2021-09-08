@@ -36,3 +36,25 @@
     transform: rotate(360deg);
   }
 }
+
+
+.Planta_terreo, .path {
+  display: block;
+  line-height: 100px;
+  position: absolute;
+  text-align: center;
+}
+.Planta_terreo {
+  left: 20px;
+  top: 20px;
+  z-index: 0;
+  width: "400";
+  height: "300"
+}
+.path {
+  left: 20px;
+  top: 20px;
+  z-index: 1;
+}
+
+
