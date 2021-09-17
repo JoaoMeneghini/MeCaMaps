@@ -104,15 +104,23 @@ export const Floor = styled.div`
 `;
 
 export const Map = styled.div`
-    width: 450px;
-    height: 350px;
+    width: 800px;
+    height: 600px;
     border: 5px solid black;
     position: absolute;
     margin-top: 50px;
 `;
 
+const m1 = 0.304;
+const m2 = 0.515;
+const h = 800*m1;
+const c = 600*m2;
+
 export const Floor_img = styled.img`
-    width: 450px;
-    height: 350px;
+    width: ${c}px;
+    height: ${h}px;
     position: absolute;
+    z-index: 0;
+    left: 248px;
+    top: 180px;
 `;

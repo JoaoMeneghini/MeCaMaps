@@ -65,7 +65,7 @@ const Drops = () => {
         e={find}
         onChange={(e) => {
             setFind(e.value);
-            setOption('')}}
+            setOption('Select an option')}}
         />
         <Dropdown
         placeholder="Select an option"
