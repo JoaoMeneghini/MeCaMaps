@@ -42,13 +42,14 @@ export default DropdownSearchSelection;*/
 
 import { Dropdown } from 'react-dropdown-now';
 import 'react-dropdown-now/style.css';
-import { useState } from 'react';
+
+import { useFind, useOption } from "../../Context/options";
 
 // normal usage
-const Drops = () => {
+export default function Drops({ children }) {
 
-    const [option, setOption] = useState('');
-    const [find, setFind] = useState('');
+    const { find, setFind } = useFind();
+    const { option, setOption } = useOption();
 
     const stateOptions = {
         "Professores": ["Arturo", "Larissa"],
@@ -59,16 +60,16 @@ const Drops = () => {
 
     return (
     <>
+        {children}
         <Dropdown
-        placeholder="Select an option"
+        placeholder={find}
         options={findings}
         e={find}
         onChange={(e) => {
-            setFind(e.value);
-            setOption('Select an option')}}
+            setFind(e.value)}}
         />
         <Dropdown
-        placeholder="Select an option"
+        placeholder={option}
         options={stateOptions[find]}
         e={option}
         onChange={(e) => setOption(e.value)}
@@ -76,6 +77,4 @@ const Drops = () => {
     </>
     );
 };
-
-export default Drops;
 

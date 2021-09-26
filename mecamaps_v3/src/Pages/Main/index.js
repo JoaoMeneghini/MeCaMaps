@@ -31,7 +31,7 @@ export default props => {
             <Button disabled>Gerar rota</Button>
         </div>
         <div>
-            <Button><Drops></Drops></Button>
+            <Drops></Drops>
         </div>
     </Div>
   );
