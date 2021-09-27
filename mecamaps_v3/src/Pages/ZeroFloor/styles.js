@@ -94,12 +94,12 @@ export const CamImg = styled.img`
     margin: 8px 0;
 `
 export const MainMenu = styled.div`
-    position: absolute;
+    position: relative;
     left: 0px;
 `;
 
 export const Floor = styled.div`
-    position: absolute;
+    position: relative;
     right: 0px;
 `;
 

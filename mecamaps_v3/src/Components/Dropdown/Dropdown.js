@@ -40,41 +40,89 @@ const DropdownSearchSelection = () => (
 
 export default DropdownSearchSelection;*/
 
-import { Dropdown } from 'react-dropdown-now';
+/*import { Dropdown } from 'react-dropdown-now';
 import 'react-dropdown-now/style.css';
 
-import { useFind, useOption } from "../../Context/options";
+import { useHereC1, useHereC2, useWhereC1, useWhereC2 } from "../../Context/options";
 
 // normal usage
 export default function Drops({ children }) {
 
-    const { find, setFind } = useFind();
-    const { option, setOption } = useOption();
+    const { hereC1, setHereC1 } = useHereC1();
+    const { hereC2, setHereC2 } = useHereC2();
+    const { whereC1, setWhereC1 } = useWhereC1();
+    const { whereC2, setWhereC2 } = useWhereC2();
 
     const stateOptions = {
         "Professores": ["Arturo", "Larissa"],
-        "Lab": ["MT02","MT25"]
+        "Salas": ["MT02","MT25"]
     };
 
-    const findings =  ["Professores", "Lab", "Salas"];
+    const findings =  ["Professores", "Salas"];
 
     return (
     <>
         {children}
         <Dropdown
-        placeholder={find}
+        placeholder={hereC1}
         options={findings}
-        e={find}
-        onChange={(e) => {
-            setFind(e.value)}}
+        e={hereC1}
+        onChange={(e) => {setHereC1(e.value)}}
         />
         <Dropdown
-        placeholder={option}
-        options={stateOptions[find]}
-        e={option}
-        onChange={(e) => setOption(e.value)}
+        placeholder={hereC2}
+        options={stateOptions[hereC1]}
+        e={hereC2}
+        onChange={(e) => setHereC2(e.value)}
+        />
+        <Dropdown
+        placeholder={whereC1}
+        options={findings}
+        e={whereC1}
+        onChange={(e) => {setWhereC1(e.value)}}
+        />
+        <Dropdown
+        placeholder={whereC2}
+        options={stateOptions[whereC1]}
+        e={whereC2}
+        onChange={(e) => setWhereC2(e.value)}
+        />
+    </>
+    );
+};*/
+
+import { useEffect } from 'react';
+import Multiselect from 'multiselect-react-dropdown';
+
+// normal usage
+export default function Drops(props, { children }) {
+
+    const state = {
+        options: [
+            {key: 'Arturo', cat:'Professores'},
+            {key: 'Larissa', cat:'Professores'},
+            {key: 'MT02', cat:'Salas'},
+            {key: 'MT25', cat:'Salas'}
+        ]
+    };
+
+    useEffect(() => {
+        if (props.actual) {
+            props.setPlace(props.actual)
+        }
+    },[])
+
+    return (
+    <>
+        <Multiselect
+        options={state.options}
+        placeholder='Selecione...'
+        groupBy="cat"
+        displayValue="key"
+        singleSelect
+        onSelect={(selectedItem) => props.setPlace(selectedItem[0].key)}
+        onRemove={() => props.setPlace('')}
         />
     </>
     );
 };
-

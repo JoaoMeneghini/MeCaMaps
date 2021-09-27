@@ -35,7 +35,7 @@ export const Button = styled.button`
     align-items: center;
     justify-content: center;
     background-color: ${(props) => theme[props.theme].default};
-    color: white;
+    color: black;
     height: 50px;
     width: 300px;
     padding: 5px 15px;
@@ -52,7 +52,6 @@ export const Button = styled.button`
         cursor: default;
         opacity: 0.7;
     }
-    bottom: 0px;
 `;
 
 Button.defaultProps = {

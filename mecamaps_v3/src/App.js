@@ -1,5 +1,5 @@
 import React from 'react';
-import { BrowserRouter as Router, Route, Switch, Link } from 'react-router-dom';
+import { BrowserRouter as Router, Route, Switch} from 'react-router-dom';
 
 import OptionProvider from "./Context/options";
 
@@ -13,9 +13,9 @@ export default props => {
         <Router>
             <div>
                 <Switch>
-                    <Route path="/" exact component={Main} />
-                    <Route path="/zerofloor" component={Zero} />
-                    <Route path="/firstfloor" component={First} />
+                    <Route path="/main/:actual" component={Main}/>
+                    <Route path="/zerofloor" exact component={Zero}/>
+                    <Route path="/firstfloor" exact component={First}/>
                 </Switch>
             </div>
         </Router>
