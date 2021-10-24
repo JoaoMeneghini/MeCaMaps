@@ -13,9 +13,9 @@ export default props => {
         <Router>
             <div>
                 <Switch>
-                    <Route path="/main/:actual" component={Main}/>
-                    <Route path="/zerofloor" exact component={Zero}/>
+                    <Route path="/zerofloor/:actual?" exact component={Zero}/>
                     <Route path="/firstfloor" exact component={First}/>
+                    <Route path="/:actual?" exact component={Main}/>
                 </Switch>
             </div>
         </Router>

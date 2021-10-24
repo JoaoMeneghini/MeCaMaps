@@ -91,7 +91,7 @@ export default function Drops({ children }) {
     );
 };*/
 
-import { useEffect } from 'react';
+/*import { useEffect } from 'react';*/
 import Multiselect from 'multiselect-react-dropdown';
 
 // normal usage
@@ -103,14 +103,12 @@ export default function Drops(props, { children }) {
             {key: 'Larissa', cat:'Professores'},
             {key: 'MT02', cat:'Salas'},
             {key: 'MT25', cat:'Salas'}
+        ],
+        selectedValues: [
+            {key: props.actual},
+            {key: props.where}
         ]
     };
-
-    useEffect(() => {
-        if (props.actual) {
-            props.setPlace(props.actual)
-        }
-    },[])
 
     return (
     <>
@@ -120,8 +118,12 @@ export default function Drops(props, { children }) {
         groupBy="cat"
         displayValue="key"
         singleSelect
-        onSelect={(selectedItem) => props.setPlace(selectedItem[0].key)}
-        onRemove={() => props.setPlace('')}
+        onSelect={(selectedItem) => {
+            props.setPlace(selectedItem[0].key)
+        }}
+        onRemove={() => {
+            props.setPlace(null)
+        }}
         />
     </>
     );

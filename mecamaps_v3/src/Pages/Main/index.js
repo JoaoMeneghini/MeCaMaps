@@ -1,4 +1,4 @@
-import React from 'react';
+import React, { useEffect } from 'react';
 import { CamImg, Div, CamButton, SubTitle, Title, Button } from './styles';
 import cam from '../../Images/cam.png';
 import { Link, useParams } from 'react-router-dom';
@@ -15,6 +15,12 @@ export default props => {
     const { hereC1, setHereC1 } = useHereC1();
     const { whereC1, setWhereC1 } = useWhereC1();
 
+    useEffect(() => {
+        if (actual) {
+            setHereC1(actual)
+        }
+    },[actual])
+
     return (
         <Div>
             <div>
@@ -24,20 +30,20 @@ export default props => {
                 <SubTitle>Se localize na Mecatrônica!</SubTitle>
             </div>
             <div>
-                <Link to="/zerofloor"><Button>Visualizar Mapa</Button></Link>
+                <Link to="zerofloor"><Button>Visualizar Mapa</Button></Link>
             </div>
             <div>
                 <CamButton>
                     <CamImg src={cam}/>
                 </CamButton>
-                <Button><Drops actual={actual} setPlace={setHereC1}></Drops></Button>
+                <Button><Drops type={0} actual={hereC1} setPlace={setHereC1}></Drops></Button>
             </div>
             <div>
-                <Button><Drops setPlace={setWhereC1}></Drops></Button>
+                <Button><Drops type={1} where={whereC1} setPlace={setWhereC1}></Drops></Button>
             </div>
             <div>
                 <Button disabled={(hereC1.length < 1) || (whereC1.length < 1)}>
-                    <Link to="/zerofloor"><Button>Gerar Rota</Button></Link>
+                    <Link to="zerofloor"><Button>Gerar Rota</Button></Link>
                 </Button>
             </div>
         </Div>

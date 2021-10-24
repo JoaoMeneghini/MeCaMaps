@@ -37,10 +37,10 @@ export default props => {
                 <Title>MeCaMaps</Title>
             </div>
             <MainMenu>
-                <Link to="/main">Menu Principal</Link>
+                <Link to="/">Menu Principal</Link>
             </MainMenu>
             <Floor>
-                <Link to="/firstfloor">Primeiro Andar</Link>
+                <Link to="firstfloor">Primeiro Andar</Link>
             </Floor>
             <div>
                 <Drops setPlace={setHereC1}></Drops>

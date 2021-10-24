@@ -104,9 +104,9 @@ export const Floor = styled.div`
 `;
 
 export const Map = styled.div`
-    width: 800px;
-    height: 600px;
-    border: 5px solid black;
+    width: 400px;
+    height: 300px;
+    border: 5px transparent;
     position: absolute;
     margin-top: 50px;
 `;
@@ -124,3 +124,10 @@ export const Floor_img = styled.img`
     left: 248px;
     top: 180px;
 `;
+
+/*export const Floor_img = styled.img`
+    width: ${c}px;
+    height: ${h}px;
+    position: absolute;
+    z-index: 0;
+`;*/
