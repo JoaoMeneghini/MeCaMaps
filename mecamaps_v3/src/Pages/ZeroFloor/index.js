@@ -43,10 +43,10 @@ export default props => {
                 <Link to="firstfloor">Primeiro Andar</Link>
             </Floor>
             <div>
-                <Drops setPlace={setHereC1}></Drops>
+                <Drops type={0} actual={hereC1} setPlace={setHereC1}></Drops>
             </div>
             <div>
-                <Drops setPlace={setWhereC1}></Drops>
+                <Drops type={1} where={whereC1} setPlace={setWhereC1}></Drops>
             </div>
             <Map>
                 <Caminhos color={toColor} />

@@ -6,6 +6,7 @@ import OptionProvider from "./Context/options";
 import Main from './Pages/Main';
 import Zero from './Pages/ZeroFloor';
 import First from './Pages/FirstFloor';
+import QR from './Pages/QrCode';
 
 export default props => {
   return (
@@ -15,6 +16,7 @@ export default props => {
                 <Switch>
                     <Route path="/zerofloor/:actual?" exact component={Zero}/>
                     <Route path="/firstfloor" exact component={First}/>
+                    <Route path="/qrcode" exact component={QR}/>
                     <Route path="/:actual?" exact component={Main}/>
                 </Switch>
             </div>

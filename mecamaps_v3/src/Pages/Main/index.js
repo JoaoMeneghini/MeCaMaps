@@ -33,9 +33,9 @@ export default props => {
                 <Link to="zerofloor"><Button>Visualizar Mapa</Button></Link>
             </div>
             <div>
-                <CamButton>
+                <Link to="qrcode"><CamButton>
                     <CamImg src={cam}/>
-                </CamButton>
+                </CamButton></Link>
                 <Button><Drops type={0} actual={hereC1} setPlace={setHereC1}></Drops></Button>
             </div>
             <div>

@@ -105,8 +105,8 @@ export default function Drops(props, { children }) {
             {key: 'MT25', cat:'Salas'}
         ],
         selectedValues: [
-            {key: props.actual},
-            {key: props.where}
+            { key: props.actual, cat: "Group 1" },
+            { key: props.where, cat: "Group 1" }
         ]
     };
 
@@ -117,12 +117,9 @@ export default function Drops(props, { children }) {
         placeholder='Selecione...'
         groupBy="cat"
         displayValue="key"
-        singleSelect
+        singleSelect={true}
         onSelect={(selectedItem) => {
             props.setPlace(selectedItem[0].key)
-        }}
-        onRemove={() => {
-            props.setPlace(null)
         }}
         />
     </>
