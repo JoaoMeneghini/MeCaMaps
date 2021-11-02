@@ -42,14 +42,7 @@ import { Link } from 'react-router-dom';
 export default props => {
 
     const [data, setData] = useState('Not Found');
-
-    /*const handleScan = (result) => {
-        console.log(data);
-        if (result) {
-            setData(result.text)
-            }
-        }
-        */
+    const history = useHistory();
 
     const handleError = (err) => {
         console.error(err)
@@ -90,6 +83,7 @@ export default props => {
                     style={previewStyle}
                     onScan={(result) => {
                         if (result) {
+                            console.log(result);
                             setData(result.text);
                         }
                         else setData("Not Found");
